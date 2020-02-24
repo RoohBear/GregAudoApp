@@ -15,6 +15,8 @@
 		274228812404455400967DA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2742287F2404455400967DA7 /* Main.storyboard */; };
 		274228832404455700967DA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 274228822404455700967DA7 /* Assets.xcassets */; };
 		274228862404455700967DA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274228842404455700967DA7 /* LaunchScreen.storyboard */; };
+		2742288F240451C500967DA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2742288E240451C500967DA7 /* AVFoundation.framework */; };
+		274228912404530D00967DA7 /* IndiaFightScene.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 274228902404530C00967DA7 /* IndiaFightScene.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		274228822404455700967DA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		274228852404455700967DA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		274228872404455700967DA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2742288E240451C500967DA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		274228902404530C00967DA7 /* IndiaFightScene.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IndiaFightScene.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2742288F240451C500967DA7 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,7 @@
 			children = (
 				274228742404455400967DA7 /* GregAudoApp */,
 				274228732404455400967DA7 /* Products */,
+				2742288D240451C500967DA7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,17 +66,26 @@
 		274228742404455400967DA7 /* GregAudoApp */ = {
 			isa = PBXGroup;
 			children = (
+				274228902404530C00967DA7 /* IndiaFightScene.mp4 */,
 				274228752404455400967DA7 /* AppDelegate.swift */,
+				2742287D2404455400967DA7 /* GameViewController.swift */,
+				2742287B2404455400967DA7 /* GameScene.swift */,
 				274228772404455400967DA7 /* GameScene.sks */,
 				274228792404455400967DA7 /* Actions.sks */,
-				2742287B2404455400967DA7 /* GameScene.swift */,
-				2742287D2404455400967DA7 /* GameViewController.swift */,
 				2742287F2404455400967DA7 /* Main.storyboard */,
 				274228822404455700967DA7 /* Assets.xcassets */,
 				274228842404455700967DA7 /* LaunchScreen.storyboard */,
 				274228872404455700967DA7 /* Info.plist */,
 			);
 			path = GregAudoApp;
+			sourceTree = "<group>";
+		};
+		2742288D240451C500967DA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2742288E240451C500967DA7 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +151,7 @@
 				274228832404455700967DA7 /* Assets.xcassets in Resources */,
 				274228862404455700967DA7 /* LaunchScreen.storyboard in Resources */,
 				2742287A2404455400967DA7 /* Actions.sks in Resources */,
+				274228912404530D00967DA7 /* IndiaFightScene.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

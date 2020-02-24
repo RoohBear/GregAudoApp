@@ -9,12 +9,27 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import AVFoundation
+import AVKit
 
 class GameViewController: UIViewController
 {
+    var thePlayer:AVPlayer!
+    
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+    
+        if let theMoviePath = Bundle.main.url(forResource:"IndiaFightScene", withExtension:".mp4") {
+            self.thePlayer = AVPlayer.init(url:theMoviePath)
+            let playerLayer = AVPlayerLayer(player:self.thePlayer)
+            playerLayer.frame = CGRect.init(x:100, y:100, width:500, height:500)    //   self.view.bounds
+            self.view.layer.addSublayer(playerLayer)
+            self.thePlayer.play()
+        }
+        
+        
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
@@ -24,6 +39,7 @@ class GameViewController: UIViewController
                 
                 // Present the scene
                 view.presentScene(scene)
+                view.backgroundColor = UIColor.init(displayP3Red: 0.5, green: 0.6, blue: 0.1, alpha: 0.5)
             }
             
             view.ignoresSiblingOrder = true
