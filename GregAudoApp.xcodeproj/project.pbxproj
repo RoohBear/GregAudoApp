@@ -19,6 +19,15 @@
 		274228912404530D00967DA7 /* IndiaFightScene.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 274228902404530C00967DA7 /* IndiaFightScene.mp4 */; };
 		278257CD2404BF02008932CD /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 278257CC2404BF02008932CD /* AppIcon.png */; };
 		278257D32404C31B008932CD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278257D22404C31A008932CD /* AudioToolbox.framework */; };
+		278257D724059D09008932CD /* MyParticleSparkRed.sks in Resources */ = {isa = PBXBuildFile; fileRef = 278257D424059D09008932CD /* MyParticleSparkRed.sks */; };
+		278257D824059D09008932CD /* MyParticleSparkBlue.sks in Resources */ = {isa = PBXBuildFile; fileRef = 278257D524059D09008932CD /* MyParticleSparkBlue.sks */; };
+		278257D924059D09008932CD /* MyParticleSparkYellow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 278257D624059D09008932CD /* MyParticleSparkYellow.sks */; };
+		278257E024059FD8008932CD /* ballYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 278257DD24059F94008932CD /* ballYellow.png */; };
+		278257E124059FDC008932CD /* ballyellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 278257DE24059F94008932CD /* ballyellow@2x.png */; };
+		278257E224059FE0008932CD /* ballRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 278257DB24059F94008932CD /* ballRed@2x.png */; };
+		278257E324059FE3008932CD /* ballRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 278257DA24059F94008932CD /* ballRed.png */; };
+		278257E424059FE5008932CD /* ballBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 278257DC24059F94008932CD /* ballBlue@2x.png */; };
+		278257E524059FE7008932CD /* ballBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 278257DF24059F94008932CD /* ballBlue.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +45,15 @@
 		274228902404530C00967DA7 /* IndiaFightScene.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IndiaFightScene.mp4; sourceTree = "<group>"; };
 		278257CC2404BF02008932CD /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 		278257D22404C31A008932CD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		278257D424059D09008932CD /* MyParticleSparkRed.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticleSparkRed.sks; sourceTree = "<group>"; };
+		278257D524059D09008932CD /* MyParticleSparkBlue.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticleSparkBlue.sks; sourceTree = "<group>"; };
+		278257D624059D09008932CD /* MyParticleSparkYellow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticleSparkYellow.sks; sourceTree = "<group>"; };
+		278257DA24059F94008932CD /* ballRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballRed.png; sourceTree = "<group>"; };
+		278257DB24059F94008932CD /* ballRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ballRed@2x.png"; sourceTree = "<group>"; };
+		278257DC24059F94008932CD /* ballBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ballBlue@2x.png"; sourceTree = "<group>"; };
+		278257DD24059F94008932CD /* ballYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballYellow.png; sourceTree = "<group>"; };
+		278257DE24059F94008932CD /* ballyellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ballyellow@2x.png"; sourceTree = "<group>"; };
+		278257DF24059F94008932CD /* ballBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballBlue.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +95,15 @@
 				2742287B2404455400967DA7 /* GameScene.swift */,
 				274228772404455400967DA7 /* GameScene.sks */,
 				274228792404455400967DA7 /* Actions.sks */,
+				278257D524059D09008932CD /* MyParticleSparkBlue.sks */,
+				278257D424059D09008932CD /* MyParticleSparkRed.sks */,
+				278257D624059D09008932CD /* MyParticleSparkYellow.sks */,
+				278257DF24059F94008932CD /* ballBlue.png */,
+				278257DC24059F94008932CD /* ballBlue@2x.png */,
+				278257DA24059F94008932CD /* ballRed.png */,
+				278257DB24059F94008932CD /* ballRed@2x.png */,
+				278257DD24059F94008932CD /* ballYellow.png */,
+				278257DE24059F94008932CD /* ballyellow@2x.png */,
 				2742287F2404455400967DA7 /* Main.storyboard */,
 				278257CC2404BF02008932CD /* AppIcon.png */,
 				274228822404455700967DA7 /* Assets.xcassets */,
@@ -153,11 +180,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278257D824059D09008932CD /* MyParticleSparkBlue.sks in Resources */,
 				274228812404455400967DA7 /* Main.storyboard in Resources */,
+				278257E524059FE7008932CD /* ballBlue.png in Resources */,
+				278257E024059FD8008932CD /* ballYellow.png in Resources */,
 				274228782404455400967DA7 /* GameScene.sks in Resources */,
+				278257D924059D09008932CD /* MyParticleSparkYellow.sks in Resources */,
+				278257E424059FE5008932CD /* ballBlue@2x.png in Resources */,
+				278257E224059FE0008932CD /* ballRed@2x.png in Resources */,
 				274228832404455700967DA7 /* Assets.xcassets in Resources */,
+				278257D724059D09008932CD /* MyParticleSparkRed.sks in Resources */,
 				274228862404455700967DA7 /* LaunchScreen.storyboard in Resources */,
 				2742287A2404455400967DA7 /* Actions.sks in Resources */,
+				278257E324059FE3008932CD /* ballRed.png in Resources */,
+				278257E124059FDC008932CD /* ballyellow@2x.png in Resources */,
 				274228912404530D00967DA7 /* IndiaFightScene.mp4 in Resources */,
 				278257CD2404BF02008932CD /* AppIcon.png in Resources */,
 			);
@@ -318,10 +354,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = KA8LXKVMVF;
 				INFOPLIST_FILE = GregAudoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,10 +376,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = KA8LXKVMVF;
 				INFOPLIST_FILE = GregAudoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

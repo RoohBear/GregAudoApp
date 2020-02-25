@@ -14,6 +14,7 @@ import AudioToolbox
 class GregLabelNode : SKLabelNode
 {
     var direction:CGPoint!
+    var doRotate = false
 }
 
 class GameScene: SKScene
@@ -41,7 +42,7 @@ class GameScene: SKScene
         // 28.9, 29.6, 1:35.7,
         self.createTextTimer("Pirouette", timeMinute:0, timeSecond:28.9)
         self.createTextTimer("Pirouette", timeMinute:0, timeSecond:29.6)
-        self.createTextTimer("Pirouette", timeMinute:1, timeSecond:35.7)
+        self.createTextTimer("Spin", timeMinute:1, timeSecond:35.7)
 
         // stomp
         // 34.6,
@@ -49,10 +50,10 @@ class GameScene: SKScene
 
         // whip
         // 36.8, 41.1, 41.5, 45.7, 1:2.4,
-        self.createTextTimer("Whip 1!", timeMinute:0, timeSecond:36.8)
-        self.createTextTimer("Whip 2!", timeMinute:0, timeSecond:41.1)
-        self.createTextTimer("Whip 3!", timeMinute:0, timeSecond:41.5)
-        self.createTextTimer("Whip 4!", timeMinute:0, timeSecond:45.7)
+        self.createTextTimer("Whip!", timeMinute:0, timeSecond:36.8)
+        self.createTextTimer("Whip", timeMinute:0, timeSecond:41.1)
+        self.createTextTimer("Whip!", timeMinute:0, timeSecond:41.5)
+        self.createTextTimer("Whip!", timeMinute:0, timeSecond:45.7)
        // self.createTextTimer("Whip 5!", timeMinute:1, timeSecond:2.4)
 
         // step
@@ -105,7 +106,7 @@ class GameScene: SKScene
 
         // bam!
         // 1:16.2, 4:37.4,
-        self.createTextTimer("Bam!", timeMinute:1, timeSecond:16.2, vibrate:true)
+        self.createTextTimer("Ka-Blam!", timeMinute:1, timeSecond:16.2, vibrate:true)
         self.createTextTimer("Bam!", timeMinute:4, timeSecond:37.4, vibrate:true)
 
         // chop!
@@ -117,16 +118,16 @@ class GameScene: SKScene
         self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:47.0, vibrate:true)
         self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:53.0, vibrate:true)
         self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:36.4, vibrate:true)
-        self.createTextTimer("Karate Chop!", timeMinute:4, timeSecond:36.7, vibrate:true)
+        self.createTextTimer("Karate Chop!", timeMinute:4, timeSecond:39.1, vibrate:true)   // last event
 
         // foinsap!
         // 2.27.5, 2:53.5, 3:10.5, 3:18.7, 3:33.3, 4:5.0,
-        self.createTextTimer("Foinsap 1!", timeMinute:2, timeSecond:27.5)
-        self.createTextTimer("Foinsap 2!", timeMinute:2, timeSecond:53.5)
-        self.createTextTimer("Foinsap 3!", timeMinute:3, timeSecond:8.5)
-        self.createTextTimer("Foinsap 4!", timeMinute:3, timeSecond:19.5)
-        self.createTextTimer("Foinsap 5!", timeMinute:3, timeSecond:33.9)
-        self.createTextTimer("Foinsap 6!", timeMinute:4, timeSecond:5.0)
+        self.createTextTimer("Foinsap!", timeMinute:2, timeSecond:27.5)
+        self.createTextTimer("Foinsap!", timeMinute:2, timeSecond:53.5)
+        self.createTextTimer("Mega-Kick!", timeMinute:3, timeSecond:12.0, vibrate:true)
+        self.createTextTimer("Giga-Kick!", timeMinute:3, timeSecond:19.5)
+        self.createTextTimer("Terra-Kick!", timeMinute:3, timeSecond:33.9, vibrate:true)
+        self.createTextTimer("Ka-POWwww!", timeMinute:4, timeSecond:5.1)
 
         // bop!
         // 3:49.3, 3:49.6, 3:50.5, 3:51.3, 3:53.5, 4:16.4, 4:18.1,
@@ -141,12 +142,12 @@ class GameScene: SKScene
         // fwap!
         // 3:57.9, 4:10.1, 4:13.4,
         self.createTextTimer("Fwap!", timeMinute:3, timeSecond:57.9)
-        self.createTextTimer("Fwap!", timeMinute:4, timeSecond:10.1)
-        self.createTextTimer("Fwap!", timeMinute:4, timeSecond:13.4)
+        self.createTextTimer("Fwap!", timeMinute:4, timeSecond:11.1)
+        self.createTextTimer("Fwap!", timeMinute:4, timeSecond:14.4)
 
         // ouch!
         // 1:6.9
-        self.createTextTimer("Ouch!!", timeMinute:1, timeSecond:6.9)
+        self.createTextTimer("MMMpph!!", timeMinute:1, timeSecond:6.9)
 
         // clap
         // 40.0
@@ -156,6 +157,8 @@ class GameScene: SKScene
         // 42.3, 42.9,
         self.createTextTimer("Point", timeMinute:0, timeSecond:42.3)
         self.createTextTimer("Point", timeMinute:0, timeSecond:42.9)
+        self.createTextTimer("Point", timeMinute:0, timeSecond:43.5)
+        self.createTextTimer("Point", timeMinute:0, timeSecond:43.9)
 
         // flip!
         // 44.7, 1:42.7,
@@ -167,40 +170,30 @@ class GameScene: SKScene
         self.createTextTimer("Rock, Paper, Scissors!", timeMinute:1, timeSecond:58.4)
 
         
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
-
         if let theMoviePath = Bundle.main.url(forResource:"IndiaFightScene", withExtension:".mp4") {
             let movieNode = SKVideoNode.init(url:theMoviePath)
-            
             self.addChild(movieNode)
-            
             movieNode.play()
         }
      }
     
+    // creates a timer that creates a text node at the specified time
     func createTextTimer(_ string:String, timeMinute:Int, timeSecond:Double, vibrate:Bool = false)
     {
         let timeToFire = (Double(timeMinute) * 60) + timeSecond
 
         let timer = Timer.scheduledTimer(withTimeInterval:timeToFire, repeats:false, block: { _ in
-            
-            self.createTextLabel(text:string)
+            self.createTextLabel(text:string, addParticleEffect:vibrate)
             
             if vibrate {
                 AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
             }
-            
         })
         arrTimers.append(timer)
     }
     
     // bong, chop, tap, step, slap, step, stop, blink, headbutt!, rock paper scissors!, fap, punch, bop!, poof!, chop!, chop!, chop!, double-chop!
-    func createTextLabel(text:String)
+    func createTextLabel(text:String, addParticleEffect:Bool = false)
     {
         let newLabel = GregLabelNode.init(text:text)
         self.addChild(newLabel);
@@ -213,6 +206,10 @@ class GameScene: SKScene
         newLabel.position = CGPoint.init(x:0.0, y:0.0)
         newLabel.direction = CGPoint.init(x:1.0, y:1.0)
 
+        if text == "BOP!" || text == "Pirouette" || text == "Spin" {
+            newLabel.doRotate = true
+        }
+        
         let r = 20 + arc4random_uniform(UInt32(20))
         var fX = CGFloat(r) / 10.0
         var fY = CGFloat(r) / 10.0
@@ -223,6 +220,12 @@ class GameScene: SKScene
             fY = 0 - fY
         }
         newLabel.direction = CGPoint.init(x:fX, y:fY)
+
+        if addParticleEffect == true {
+            if let emitter = SKEmitterNode.init(fileNamed:"MyParticleSparkYellow") {
+                newLabel.addChild(emitter)
+            }
+        }
     }
         
     override func update(_ currentTime: TimeInterval)
@@ -237,6 +240,14 @@ class GameScene: SKScene
                 c.alpha = c.alpha - 0.01
                 c.xScale = c.xScale + 0.01
                 c.yScale = c.yScale + 0.01
+
+                if c.doRotate {
+                    c.zRotation = c.zRotation + 0.1
+                }
+                
+                if c.alpha <= 0 {
+                    c.removeFromParent()
+                }
             }
         }
     }
