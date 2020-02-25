@@ -17,6 +17,8 @@
 		274228862404455700967DA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274228842404455700967DA7 /* LaunchScreen.storyboard */; };
 		2742288F240451C500967DA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2742288E240451C500967DA7 /* AVFoundation.framework */; };
 		274228912404530D00967DA7 /* IndiaFightScene.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 274228902404530C00967DA7 /* IndiaFightScene.mp4 */; };
+		278257CD2404BF02008932CD /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 278257CC2404BF02008932CD /* AppIcon.png */; };
+		278257D32404C31B008932CD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 278257D22404C31A008932CD /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		274228872404455700967DA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2742288E240451C500967DA7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		274228902404530C00967DA7 /* IndiaFightScene.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IndiaFightScene.mp4; sourceTree = "<group>"; };
+		278257CC2404BF02008932CD /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		278257D22404C31A008932CD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2742288F240451C500967DA7 /* AVFoundation.framework in Frameworks */,
+				278257D32404C31B008932CD /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +78,7 @@
 				274228772404455400967DA7 /* GameScene.sks */,
 				274228792404455400967DA7 /* Actions.sks */,
 				2742287F2404455400967DA7 /* Main.storyboard */,
+				278257CC2404BF02008932CD /* AppIcon.png */,
 				274228822404455700967DA7 /* Assets.xcassets */,
 				274228842404455700967DA7 /* LaunchScreen.storyboard */,
 				274228872404455700967DA7 /* Info.plist */,
@@ -83,6 +89,7 @@
 		2742288D240451C500967DA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				278257D22404C31A008932CD /* AudioToolbox.framework */,
 				2742288E240451C500967DA7 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
@@ -152,6 +159,7 @@
 				274228862404455700967DA7 /* LaunchScreen.storyboard in Resources */,
 				2742287A2404455400967DA7 /* Actions.sks in Resources */,
 				274228912404530D00967DA7 /* IndiaFightScene.mp4 in Resources */,
+				278257CD2404BF02008932CD /* AppIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,15 +316,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = KA8LXKVMVF;
 				INFOPLIST_FILE = GregAudoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.RoohBearCorp.GregAudoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Audo Profile";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -326,15 +338,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = KA8LXKVMVF;
 				INFOPLIST_FILE = GregAudoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.RoohBearCorp.GregAudoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Audo Profile";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import AudioToolbox
 
 
 class GregLabelNode : SKLabelNode
@@ -21,18 +22,6 @@ class GameScene: SKScene
     private var spinnyNode : SKShapeNode?
     var arrTimers = [Timer]()
 
-    func createTextTimer(_ string:String, timeMinute:Int, timeSecond:Double)
-    {
-        let timeToFire = (Double(timeMinute) * 60) + timeSecond
-
-        let timer = Timer.scheduledTimer(withTimeInterval:timeToFire, repeats:false, block: { _ in
-            
-            self.createTextLabel(text:string)
-            
-        })
-        arrTimers.append(timer)
-    }
-    
     override func didMove(to view: SKView)
     {
         // bongs
@@ -60,11 +49,11 @@ class GameScene: SKScene
 
         // whip
         // 36.8, 41.1, 41.5, 45.7, 1:2.4,
-        self.createTextTimer("Whip!", timeMinute:0, timeSecond:36.8)
-        self.createTextTimer("Whip!", timeMinute:0, timeSecond:41.1)
-        self.createTextTimer("Whip!", timeMinute:0, timeSecond:41.5)
-        self.createTextTimer("Whip!", timeMinute:0, timeSecond:45.7)
-        self.createTextTimer("Whip!", timeMinute:1, timeSecond:2.4)
+        self.createTextTimer("Whip 1!", timeMinute:0, timeSecond:36.8)
+        self.createTextTimer("Whip 2!", timeMinute:0, timeSecond:41.1)
+        self.createTextTimer("Whip 3!", timeMinute:0, timeSecond:41.5)
+        self.createTextTimer("Whip 4!", timeMinute:0, timeSecond:45.7)
+       // self.createTextTimer("Whip 5!", timeMinute:1, timeSecond:2.4)
 
         // step
         // 47.2, 48.3, 1:9.0, 1:10.5, 1:22.8, 1:24.9, 1:29.4, 1:30.5, 1:31.7, 1:33.4, 2:2.7, 2:5.8, 2:7.7, 2:9.5, 2:11.0,
@@ -98,17 +87,17 @@ class GameScene: SKScene
 
         // adams apple chop!
         // 2:17.2
-        self.createTextTimer("Adam's Apple Chop!", timeMinute:2, timeSecond:17.2)
+        self.createTextTimer("Adam's Apple Chop!", timeMinute:2, timeSecond:17.2, vibrate:true)
 
         // chop!
         // 2:17.2 + 0.9, 0.6, 0.4, 0.6
         // 4:39.2,
-        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:17.2)
-        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:17.2 + 0.9)
-        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:17.2 + 0.6)
-        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:17.2 + 0.4)
-        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:17.2 + 0.6)
-        self.createTextTimer("Karate Chop!", timeMinute:4, timeSecond:39.2)
+        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:17.7, vibrate:true)
+        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:17.7 + 0.9, vibrate:true)
+        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:17.7 + 0.6, vibrate:true)
+        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:17.7 + 0.4, vibrate:true)
+        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:17.7 + 0.6, vibrate:true)
+        self.createTextTimer("Karate Chop!", timeMinute:4, timeSecond:39.2, vibrate:true)
 
         // stomp!
         // 1:34.7,
@@ -116,38 +105,38 @@ class GameScene: SKScene
 
         // bam!
         // 1:16.2, 4:37.4,
-        self.createTextTimer("Bam!", timeMinute:1, timeSecond:16.2)
-        self.createTextTimer("Bam!", timeMinute:4, timeSecond:37.4)
+        self.createTextTimer("Bam!", timeMinute:1, timeSecond:16.2, vibrate:true)
+        self.createTextTimer("Bam!", timeMinute:4, timeSecond:37.4, vibrate:true)
 
         // chop!
         // 56.3, 1:45.0, 2:25.9, 2:39.4, 2:47.0, 2:53.0, 4:36.4, 4:36.7,
-        self.createTextTimer("Karate Chop!", timeMinute:0, timeSecond:56.3)
-        self.createTextTimer("Karate Chop!", timeMinute:1, timeSecond:45.0)
-        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:25.9)
-        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:39.4)
-        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:47.0)
-        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:53.0)
-        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:36.4)
-        self.createTextTimer("Karate Chop!", timeMinute:4, timeSecond:36.7)
+        self.createTextTimer("Karate Chop!", timeMinute:0, timeSecond:56.3, vibrate:true)
+        self.createTextTimer("Karate Chop!", timeMinute:1, timeSecond:45.0, vibrate:true)
+        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:25.9, vibrate:true)
+        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:39.4, vibrate:true)
+        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:47.0, vibrate:true)
+        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:53.0, vibrate:true)
+        self.createTextTimer("Karate Chop!", timeMinute:2, timeSecond:36.4, vibrate:true)
+        self.createTextTimer("Karate Chop!", timeMinute:4, timeSecond:36.7, vibrate:true)
 
         // foinsap!
         // 2.27.5, 2:53.5, 3:10.5, 3:18.7, 3:33.3, 4:5.0,
-        self.createTextTimer("Foinsap!", timeMinute:2, timeSecond:27.5)
-        self.createTextTimer("Foinsap!", timeMinute:2, timeSecond:53.5)
-        self.createTextTimer("Foinsap!", timeMinute:3, timeSecond:10.5)
-        self.createTextTimer("Foinsap!", timeMinute:3, timeSecond:19.5)
-        self.createTextTimer("Foinsap!", timeMinute:3, timeSecond:33.9)
-        self.createTextTimer("Foinsap!", timeMinute:4, timeSecond:5.0)
+        self.createTextTimer("Foinsap 1!", timeMinute:2, timeSecond:27.5)
+        self.createTextTimer("Foinsap 2!", timeMinute:2, timeSecond:53.5)
+        self.createTextTimer("Foinsap 3!", timeMinute:3, timeSecond:8.5)
+        self.createTextTimer("Foinsap 4!", timeMinute:3, timeSecond:19.5)
+        self.createTextTimer("Foinsap 5!", timeMinute:3, timeSecond:33.9)
+        self.createTextTimer("Foinsap 6!", timeMinute:4, timeSecond:5.0)
 
         // bop!
         // 3:49.3, 3:49.6, 3:50.5, 3:51.3, 3:53.5, 4:16.4, 4:18.1,
-        self.createTextTimer("BOP!", timeMinute:3, timeSecond:49.3)
-        self.createTextTimer("BOP!", timeMinute:3, timeSecond:49.6)
-        self.createTextTimer("BOP!", timeMinute:3, timeSecond:50.5)
-        self.createTextTimer("BOP!", timeMinute:3, timeSecond:51.3)
-        self.createTextTimer("BOP!", timeMinute:3, timeSecond:53.5)
-        self.createTextTimer("BOP!", timeMinute:4, timeSecond:16.4)
-        self.createTextTimer("BOP!", timeMinute:4, timeSecond:18.1)
+        self.createTextTimer("BOP!", timeMinute:3, timeSecond:50.3)
+        self.createTextTimer("BOP!", timeMinute:3, timeSecond:50.6)
+        self.createTextTimer("BOP!", timeMinute:3, timeSecond:51.5)
+        self.createTextTimer("BOP!", timeMinute:3, timeSecond:52.3)
+        self.createTextTimer("BOP!", timeMinute:3, timeSecond:54.5)
+        self.createTextTimer("BOP!", timeMinute:4, timeSecond:17.4)
+        self.createTextTimer("BOP!", timeMinute:4, timeSecond:19.1)
 
         // fwap!
         // 3:57.9, 4:10.1, 4:13.4,
@@ -194,13 +183,29 @@ class GameScene: SKScene
         }
      }
     
+    func createTextTimer(_ string:String, timeMinute:Int, timeSecond:Double, vibrate:Bool = false)
+    {
+        let timeToFire = (Double(timeMinute) * 60) + timeSecond
+
+        let timer = Timer.scheduledTimer(withTimeInterval:timeToFire, repeats:false, block: { _ in
+            
+            self.createTextLabel(text:string)
+            
+            if vibrate {
+                AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+            }
+            
+        })
+        arrTimers.append(timer)
+    }
+    
     // bong, chop, tap, step, slap, step, stop, blink, headbutt!, rock paper scissors!, fap, punch, bop!, poof!, chop!, chop!, chop!, double-chop!
     func createTextLabel(text:String)
     {
         let newLabel = GregLabelNode.init(text:text)
         self.addChild(newLabel);
-        newLabel.fontSize = 24.0 + CGFloat(arc4random_uniform(24))
-        newLabel.fontName = "Bookman"
+        newLabel.fontSize = 34.0 + CGFloat(arc4random_uniform(24))
+        newLabel.fontName = "AmericanTypewriter-Bold"
         newLabel.fontColor = UIColor.init(red: CGFloat(arc4random_uniform(256)) / 256.0,
                                           green:CGFloat(arc4random_uniform(256)) / 256.0,
                                           blue:CGFloat(arc4random_uniform(256)) / 256.0,
@@ -229,6 +234,9 @@ class GameScene: SKScene
                 c.position.x += c.direction.x
                 c.position.y += c.direction.y
                 
+                c.alpha = c.alpha - 0.01
+                c.xScale = c.xScale + 0.01
+                c.yScale = c.yScale + 0.01
             }
         }
     }
